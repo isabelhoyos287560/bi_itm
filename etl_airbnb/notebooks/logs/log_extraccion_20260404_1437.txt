@@ -1,0 +1,13 @@
+2026-04-04 14:37:09 - INFO - Logger iniciado para el modulo: extraccion
+2026-04-04 14:37:09 - INFO - Archivo de log: logs\log_extraccion_20260404_1437.txt
+2026-04-04 14:37:09 - INFO - Intentando conectar a MongoDB: mongodb://localhost:27017/
+2026-04-04 14:37:09 - INFO - Conexion exitosa a la base de datos: 'airbnb_buenosaires'
+2026-04-04 14:37:09 - INFO - Iniciando extraccion completa de todas las colecciones.
+2026-04-04 14:37:09 - INFO - Extrayendo coleccion: 'listings'
+2026-04-04 14:37:09 - WARNING - La coleccion 'listings' esta vacia o no existe.
+2026-04-04 14:37:09 - INFO - Extrayendo coleccion: 'reviews'
+2026-04-04 14:37:09 - WARNING - La coleccion 'reviews' esta vacia o no existe.
+2026-04-04 14:37:09 - INFO - Extrayendo coleccion: 'calendar'
+2026-04-04 14:37:09 - WARNING - La coleccion 'calendar' esta vacia o no existe.
+2026-04-04 14:37:09 - INFO - Extraccion finalizada. Resumen: Listings=0 | Reviews=0 | Calendar=0
+2026-04-04 14:37:09 - INFO - Conexion a MongoDB cerrada correctamente.

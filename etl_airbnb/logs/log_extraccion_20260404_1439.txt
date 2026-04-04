@@ -1,0 +1,26 @@
+2026-04-04 14:39:39 - INFO - Logger iniciado para el modulo: extraccion
+2026-04-04 14:39:39 - INFO - Archivo de log: logs\log_extraccion_20260404_1439.txt
+2026-04-04 14:39:39 - INFO - Intentando conectar a MongoDB: mongodb://localhost:27017/
+2026-04-04 14:39:39 - INFO - Conexion exitosa a la base de datos: 'airbnb_itm'
+2026-04-04 14:39:39 - INFO - Iniciando extraccion completa de todas las colecciones.
+2026-04-04 14:39:39 - INFO - Extrayendo coleccion: 'Listings'
+2026-04-04 14:39:40 - INFO - Coleccion 'Listings' extraida correctamente. Registros: 27,348 | Columnas: 71
+2026-04-04 14:39:40 - INFO - Extrayendo coleccion: 'Reviews'
+2026-04-04 14:39:44 - INFO - Logger iniciado para el modulo: extraccion
+2026-04-04 14:39:44 - INFO - Archivo de log: logs\log_extraccion_20260404_1439.txt
+2026-04-04 14:39:44 - INFO - Intentando conectar a MongoDB: mongodb://localhost:27017/
+2026-04-04 14:39:44 - INFO - Conexion exitosa a la base de datos: 'airbnb_itm'
+2026-04-04 14:39:44 - INFO - Iniciando extraccion completa de todas las colecciones.
+2026-04-04 14:39:44 - INFO - Extrayendo coleccion: 'Listings'
+2026-04-04 14:39:45 - INFO - Coleccion 'Listings' extraida correctamente. Registros: 27,348 | Columnas: 71
+2026-04-04 14:39:45 - INFO - Extrayendo coleccion: 'Reviews'
+2026-04-04 14:39:47 - INFO - Coleccion 'Reviews' extraida correctamente. Registros: 1,042,702 | Columnas: 6
+2026-04-04 14:39:47 - INFO - Extrayendo coleccion: 'Calendar'
+2026-04-04 14:39:52 - INFO - Coleccion 'Reviews' extraida correctamente. Registros: 1,042,702 | Columnas: 6
+2026-04-04 14:39:52 - INFO - Extrayendo coleccion: 'Calendar'
+2026-04-04 14:40:54 - INFO - Coleccion 'Calendar' extraida correctamente. Registros: 9,982,072 | Columnas: 5
+2026-04-04 14:40:54 - INFO - Extraccion finalizada. Resumen: Listings=27,348 | Reviews=1,042,702 | Calendar=9,982,072
+2026-04-04 14:40:54 - INFO - Conexion a MongoDB cerrada correctamente.
+2026-04-04 14:40:56 - INFO - Coleccion 'Calendar' extraida correctamente. Registros: 9,982,072 | Columnas: 5
+2026-04-04 14:40:56 - INFO - Extraccion finalizada. Resumen: Listings=27,348 | Reviews=1,042,702 | Calendar=9,982,072
+2026-04-04 14:40:57 - INFO - Conexion a MongoDB cerrada correctamente.
