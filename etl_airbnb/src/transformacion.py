@@ -80,7 +80,12 @@ class Transformacion:
             pd.DataFrame: DataFrame sin duplicados exactos.
         """
         registros_antes = len(df)
-        df = df.drop_duplicates()
+        cols_hashables = [
+            col for col in df.columns 
+            if not df[col].apply(lambda x: isinstance(x, (list, dict))).any()
+        ]
+        df = df.drop_duplicates(subset=cols_hashables)
+        
         registros_despues = len(df)
         eliminados = registros_antes - registros_despues
 
@@ -259,6 +264,12 @@ class Transformacion:
                     )
 
         self.log.info(f"[Listings] Transformacion completada. Shape final: {df.shape}")
+
+        # Convertir columnas de tipo lista/dict a string para que SQLite las acepte
+        for col in df.columns:
+            if df[col].apply(lambda x: isinstance(x, (list, dict))).any():
+                self.log.info(f"[Listings] Convirtiendo columna compleja '{col}' a string para carga.")
+                df[col] = df[col].astype(str)
         return df
 
     # ── Transformacion de Reviews ──────────────────────────────────────────────

@@ -1,0 +1,13 @@
+# Bases de datos
+*.db
+
+# Datos
+data/
+src/data/
+
+# Archivos grandes
+*.csv
+*.gz
+
+# Logs
+logs/
