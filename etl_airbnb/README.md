@@ -144,9 +144,9 @@ Ejemplo de log generado:
 
 | Nombre | Responsabilidad |
 |---|---|
-| [Nombre 1] | Extracción y conexión MongoDB |
-| [Nombre 2] | Transformación y EDA |
-| [Nombre 3] | Carga SQLite, XLSX e informe |
+| Edwin Ramirez Gonzalez | Extracción y conexión MongoDB |
+| Isabel Johana Hoyos| Transformación y EDA |
+| Wilmar Fonseca| Carga SQLite, XLSX e informe |
 
 ## Fuente de datos
 
