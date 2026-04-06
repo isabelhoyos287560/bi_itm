@@ -79,14 +79,14 @@ class Logger:
         self.info(f"Logger iniciado para el modulo: {nombre}")
         self.info(f"Archivo de log: {ruta_archivo}")
 
-    def info(self, mensaje: str):
+    def info(self, mensaje: str) -> None:
         """Registra un mensaje de nivel INFO."""
         self.logger.info(mensaje)
 
-    def warning(self, mensaje: str):
+    def warning(self, mensaje: str) -> None:
         """Registra un mensaje de nivel WARNING."""
         self.logger.warning(mensaje)
 
-    def error(self, mensaje: str):
+    def error(self, mensaje: str) -> None:
         """Registra un mensaje de nivel ERROR."""
         self.logger.error(mensaje)

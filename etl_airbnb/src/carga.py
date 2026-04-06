@@ -69,7 +69,7 @@ class Carga:
 
     # ── Carga en SQLite ────────────────────────────────────────────────────────
 
-    def cargar_sqlite(self):
+    def cargar_sqlite(self) -> None:
         """
         Inserta los tres DataFrames transformados en una base de datos SQLite local.
 
@@ -108,7 +108,7 @@ class Carga:
 
     # ── Verificacion de carga ──────────────────────────────────────────────────
 
-    def verificar_carga(self):
+    def verificar_carga(self) -> None:
         """
         Verifica que las tablas existan en SQLite y que el conteo de registros
         coincida con los DataFrames cargados.
@@ -145,7 +145,7 @@ class Carga:
 
     # ── Exportacion a XLSX ─────────────────────────────────────────────────────
 
-    def exportar_xlsx(self):
+    def exportar_xlsx(self) -> None:
         """
         Exporta los tres DataFrames transformados a archivos XLSX individuales
         dentro de la carpeta de salidas procesadas.
@@ -178,7 +178,7 @@ class Carga:
 
     # ── Pipeline completo de carga ─────────────────────────────────────────────
 
-    def cargar_todo(self):
+    def cargar_todo(self) -> None:
         """
         Ejecuta el pipeline completo de carga:
           1. Carga los tres DataFrames en SQLite.

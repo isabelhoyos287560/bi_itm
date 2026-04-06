@@ -98,7 +98,7 @@ class Transformacion:
             self.log.warning(f"[{nombre}] Se eliminaron {eliminados:,} registros duplicados.")
         return df
 
-    def _normalizar_precio(self, valor) -> float:
+    def _normalizar_precio(self, valor: any) -> float:
         """
         Convierte un campo de precio en formato texto ('$1,200.00') a float.
         Elimina el simbolo $, comas y espacios. Retorna NaN si no es convertible.

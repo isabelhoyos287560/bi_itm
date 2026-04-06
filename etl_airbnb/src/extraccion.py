@@ -58,7 +58,7 @@ class Extraccion:
         self.db = None
         self._conectar()
 
-    def _conectar(self):
+    def _conectar(self) -> None:
         """
         Establece la conexion a la base de datos MongoDB.
 
@@ -161,7 +161,7 @@ class Extraccion:
         )
         return df_listings, df_reviews, df_calendar
 
-    def cerrar_conexion(self):
+    def cerrar_conexion(self) -> None:
         """Cierra la conexion con MongoDB y registra el evento en el log."""
         if self.cliente:
             self.cliente.close()

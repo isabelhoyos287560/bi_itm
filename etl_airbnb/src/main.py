@@ -23,7 +23,7 @@ from logger import Logger
 from config import RUTA_LOGS
 
 
-def main():
+def main() -> None:
     log = Logger("main", ruta_logs=RUTA_LOGS)
     log.info("=" * 60)
     log.info("INICIO DEL PROCESO ETL - AIRBNB BUENOS AIRES")
