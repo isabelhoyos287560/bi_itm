@@ -1,0 +1,7 @@
+2026-04-05 11:44:06 - INFO - Logger iniciado para el modulo: main
+2026-04-05 11:44:06 - INFO - Archivo de log: logs\log_main_20260405_1144.txt
+2026-04-05 11:44:06 - INFO - ============================================================
+2026-04-05 11:44:06 - INFO - INICIO DEL PROCESO ETL - AIRBNB BUENOS AIRES
+2026-04-05 11:44:06 - INFO - ============================================================
+2026-04-05 11:44:06 - INFO - FASE 1: Extraccion
+2026-04-05 11:44:59 - INFO - FASE 2: Transformacion

@@ -9,5 +9,3 @@ src/data/
 *.csv
 *.gz
 
-# Logs
-logs/

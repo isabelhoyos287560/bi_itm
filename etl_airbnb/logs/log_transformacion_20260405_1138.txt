@@ -1,0 +1,24 @@
+2026-04-05 11:38:05 - INFO - Logger iniciado para el modulo: transformacion
+2026-04-05 11:38:05 - INFO - Archivo de log: logs\log_transformacion_20260405_1138.txt
+2026-04-05 11:38:05 - INFO - Clase Transformacion inicializada con los tres DataFrames.
+2026-04-05 11:38:05 - INFO - Iniciando pipeline completo de transformaciones.
+2026-04-05 11:38:05 - INFO - Iniciando transformacion de Listings.
+2026-04-05 11:38:06 - INFO - [Listings] Antes: 27,348 | Después: 27,348 | Duplicados eliminados: 0
+2026-04-05 11:38:06 - INFO - [Listings] Columna 'last_scraped' convertida a fecha. Variables derivadas: anio, mes, dia, trimestre.
+2026-04-05 11:38:06 - WARNING - [Listings] La columna 'host_since' no existe. Se omite conversion.
+2026-04-05 11:38:06 - INFO - [Listings] Columna 'calendar_last_scraped' convertida a fecha. Variables derivadas: anio, mes, dia, trimestre.
+2026-04-05 11:38:07 - INFO - [Listings] Campo 'amenities_cantidad' derivado del campo 'amenities'.
+2026-04-05 11:38:07 - WARNING - [Listings] 106 nulos en 'minimum_nights' reemplazados por 0.
+2026-04-05 11:38:07 - WARNING - [Listings] 106 nulos en 'maximum_nights' reemplazados por 0.
+2026-04-05 11:38:07 - WARNING - [Listings] 3,303 nulos en 'review_scores_rating' reemplazados por 0.
+2026-04-05 11:38:07 - INFO - [Listings] Transformacion completada. Shape final: (27348, 80)
+2026-04-05 11:38:07 - INFO - Iniciando transformacion de Reviews.
+2026-04-05 11:38:09 - INFO - [Reviews] Antes: 1,042,702 | Después: 1,042,702 | Duplicados eliminados: 0
+2026-04-05 11:38:10 - INFO - [Reviews] Columna 'date' convertida a fecha. Variables derivadas: anio, mes, dia, trimestre.
+2026-04-05 11:38:10 - INFO - [Reviews] Transformacion completada. Shape final: (1042702, 10)
+2026-04-05 11:38:10 - INFO - Iniciando transformacion de Calendar.
+2026-04-05 11:38:37 - INFO - [Calendar] Antes: 9,982,072 | Después: 9,982,072 | Duplicados eliminados: 0
+2026-04-05 11:38:41 - INFO - [Calendar] Columna 'date' convertida a fecha. Variables derivadas: anio, mes, dia, trimestre.
+2026-04-05 11:38:41 - INFO - [Calendar] Campo 'available' convertido a booleano.
+2026-04-05 11:38:41 - INFO - [Calendar] Transformacion completada. Shape final: (9982072, 9)
+2026-04-05 11:38:41 - INFO - Pipeline de transformaciones finalizado correctamente.

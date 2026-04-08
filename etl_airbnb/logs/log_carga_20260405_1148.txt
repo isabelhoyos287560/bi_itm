@@ -1,0 +1,6 @@
+2026-04-05 11:48:02 - INFO - Logger iniciado para el modulo: carga
+2026-04-05 11:48:02 - INFO - Archivo de log: logs\log_carga_20260405_1148.txt
+2026-04-05 11:48:02 - INFO - Clase Carga inicializada.
+2026-04-05 11:48:02 - INFO - Iniciando pipeline completo de carga.
+2026-04-05 11:48:02 - INFO - Iniciando carga en SQLite: src\data\etl_airbnb.db
+2026-04-05 11:48:02 - ERROR - Error durante la carga en SQLite: Execution failed

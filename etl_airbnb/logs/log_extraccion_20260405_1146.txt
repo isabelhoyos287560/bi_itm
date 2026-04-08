@@ -1,0 +1,13 @@
+2026-04-05 11:46:43 - INFO - Logger iniciado para el modulo: extraccion
+2026-04-05 11:46:43 - INFO - Archivo de log: logs\log_extraccion_20260405_1146.txt
+2026-04-05 11:46:43 - INFO - Intentando conectar a MongoDB: mongodb://localhost:27017/
+2026-04-05 11:46:43 - INFO - Conexion exitosa a la base de datos: 'airbnb_itm'
+2026-04-05 11:46:43 - INFO - Iniciando extraccion completa de todas las colecciones.
+2026-04-05 11:46:43 - INFO - Extrayendo coleccion: 'Listings'
+2026-04-05 11:46:44 - INFO - Coleccion 'Listings' extraida correctamente. Registros: 27,348 | Columnas: 71
+2026-04-05 11:46:44 - INFO - Extrayendo coleccion: 'Reviews'
+2026-04-05 11:46:50 - INFO - Coleccion 'Reviews' extraida correctamente. Registros: 1,042,702 | Columnas: 6
+2026-04-05 11:46:50 - INFO - Extrayendo coleccion: 'Calendar'
+2026-04-05 11:47:35 - INFO - Coleccion 'Calendar' extraida correctamente. Registros: 9,982,072 | Columnas: 5
+2026-04-05 11:47:35 - INFO - Extraccion finalizada. Resumen: Listings=27,348 | Reviews=1,042,702 | Calendar=9,982,072
+2026-04-05 11:47:35 - INFO - Conexion a MongoDB cerrada correctamente.
