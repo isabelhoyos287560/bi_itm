@@ -1,5 +1,0 @@
-2026-04-05 11:44:59 - INFO - Logger iniciado para el modulo: transformacion
-2026-04-05 11:44:59 - INFO - Archivo de log: logs\log_transformacion_20260405_1144.txt
-2026-04-05 11:44:59 - INFO - Clase Transformacion inicializada con los tres DataFrames.
-2026-04-05 11:44:59 - INFO - Iniciando pipeline completo de transformaciones.
-2026-04-05 11:44:59 - INFO - Iniciando transformacion de Listings.

@@ -1,0 +1,11 @@
+2026-04-07 20:47:20 - INFO - Logger iniciado para el modulo: main
+2026-04-07 20:47:20 - INFO - Archivo de log: c:\Users\Usuario\Documents\GitHub\bi_itm\etl_airbnb\logs\log_main_20260407_2047.txt
+2026-04-07 20:47:20 - INFO - ============================================================
+2026-04-07 20:47:20 - INFO - INICIO DEL PROCESO ETL - AIRBNB BUENOS AIRES
+2026-04-07 20:47:20 - INFO - ============================================================
+2026-04-07 20:47:20 - INFO - FASE 1: Extraccion
+2026-04-07 20:48:14 - INFO - FASE 2: Transformacion
+2026-04-07 20:48:39 - INFO - FASE 3: Carga
+2026-04-07 20:51:01 - INFO - ============================================================
+2026-04-07 20:51:01 - INFO - PROCESO ETL FINALIZADO CORRECTAMENTE
+2026-04-07 20:51:01 - INFO - ============================================================

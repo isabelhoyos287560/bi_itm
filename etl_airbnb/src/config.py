@@ -13,6 +13,9 @@ from dotenv import load_dotenv
 # Cargar variables desde el archivo .env
 load_dotenv()
 
+# Ruta base del proyecto (carpeta etl_airbnb)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 # ── MongoDB ────────────────────────────────────────────────────────────────────
 MONGODB_URI         = os.getenv("MONGODB_URI", "mongodb://localhost:27017/")
 MONGODB_DATABASE    = os.getenv("MONGODB_DATABASE", "airbnb_itm")
@@ -24,9 +27,9 @@ COLECCION_REVIEWS   = "Reviews"
 COLECCION_CALENDAR  = "Calendar"
 
 # ── Rutas del proyecto ─────────────────────────────────────────────────────────
-RUTA_DATA           = os.path.join("src", "data")
-RUTA_PROCESSED      = os.path.join("src", "data", "processed")
-RUTA_LOGS           = "logs"
+RUTA_DATA           = os.path.join(BASE_DIR, "src", "data")
+RUTA_PROCESSED      = os.path.join(BASE_DIR, "src", "data", "processed")
+RUTA_LOGS           = os.path.join(BASE_DIR, "logs")
 
 # ── SQLite ─────────────────────────────────────────────────────────────────────
 SQLITE_DB           = os.path.join(RUTA_DATA, "etl_airbnb.db")
