@@ -320,10 +320,7 @@ class Transformacion:
 
         Transformaciones aplicadas:
           1. Limpieza de duplicados.
-          2. Normalizacion del campo 'price' a float.
-          3. Conversion de la columna 'date' a fecha estandar con derivadas (anio, mes, dia, trimestre).
-          4. Conversion de 'available' de 't'/'f' a booleano.
-          5. Categorizacion del precio por rangos.
+          2. Conversion de la columna 'date' a fecha estandar con derivadas (anio, mes, dia, trimestre).
 
         Returns:
             pd.DataFrame: DataFrame de calendar transformado y listo para carga.
@@ -334,23 +331,8 @@ class Transformacion:
         # 1. Limpiar duplicados
         df = self._limpiar_nulos_y_duplicados(df, "Calendar")
 
-        # 2. Normalizar precio
-        if "price" in df.columns:
-            df["price"] = df["price"].apply(self._normalizar_precio)
-            self.log.info("[Calendar] Campo 'price' normalizado a float.")
-
-        # 3. Convertir fecha con derivadas (anio, mes, dia, trimestre)
+        # 2. Convertir fecha con derivadas (anio, mes, dia, trimestre)
         df = self._convertir_fecha(df, "date", "Calendar")
-
-        # 4. Convertir campo 'available' de string 't'/'f' a booleano
-        if "available" in df.columns:
-            df["available"] = df["available"].map({"t": True, "f": False})
-            self.log.info("[Calendar] Campo 'available' convertido a booleano.")
-
-        # 5. Categorizar precio
-        if "price" in df.columns:
-            df["price_categoria"] = df["price"].apply(self._categorizar_precio)
-            self.log.info("[Calendar] Columna 'price_categoria' creada.")
 
         self.log.info(f"[Calendar] Transformacion completada. Shape final: {df.shape}")
         return df

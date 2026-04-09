@@ -23,7 +23,7 @@ etl_airbnb/
 │       └── processed/         # 📁 GENERADO: salidas transformadas (XLSX), ignorado en Git
 ├── notebooks/
 │   └── exploracion_airbnb.ipynb    # Análisis exploratorio de datos (EDA)
-├── logs/                      # 📁 GENERADO: logs de cada ejecución, ignorado en Git
+├── logs/                      # Logs generados de extraccion, transformacion, carga y main
 ├── Informe_Taller_2_ETL_Airbnb.docx  # Informe final con análisis y conclusiones, ignorado en Git
 ├── .env.example               # Plantilla de variables de entorno
 ├── requirements.txt           # Dependencias del proyecto
