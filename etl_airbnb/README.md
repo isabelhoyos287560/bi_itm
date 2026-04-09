@@ -13,27 +13,30 @@ Aplicar los conceptos de Extracción, Transformación y Carga (ETL) sobre los da
 ```
 etl_airbnb/
 ├── src/
-│   ├── logger.py           # Clase reutilizable de manejo de logs
-│   ├── config.py           # Configuración central y variables de entorno
-│   ├── extraccion.py       # Clase Extraccion — conexión a MongoDB y carga en DataFrames
-│   ├── transformacion.py   # Clase Transformacion — limpieza y estandarización
-│   ├── carga.py            # Clase Carga — SQLite y exportación XLSX
-│   ├── main.py             # Script principal que orquesta el ETL completo
+│   ├── logger.py              # Clase reutilizable de manejo de logs
+│   ├── config.py              # Configuración central y variables de entorno
+│   ├── extraccion.py          # Clase Extraccion — conexión a MongoDB y carga en DataFrames
+│   ├── transformacion.py      # Clase Transformacion — limpieza y estandarización
+│   ├── carga.py               # Clase Carga — SQLite y exportación XLSX
+│   ├── main.py                # Script principal que orquesta el ETL completo
 │   └── data/
-│       └── processed/      # Salidas transformadas (XLSX y SQLite)
+│       └── processed/         # 📁 GENERADO: salidas transformadas (XLSX), ignorado en Git
 ├── notebooks/
-│   └── exploracion_airbnb.ipynb   # Análisis exploratorio de datos (EDA)
-├── logs/                   # Archivos de log generados por cada ejecución
-├── .env.example            # Plantilla de variables de entorno
-├── requirements.txt        # Dependencias del proyecto
+│   └── exploracion_airbnb.ipynb    # Análisis exploratorio de datos (EDA)
+├── logs/                      # 📁 GENERADO: logs de cada ejecución, ignorado en Git
+├── Informe_Taller_2_ETL_Airbnb.docx  # Informe final con análisis y conclusiones, ignorado en Git
+├── .env.example               # Plantilla de variables de entorno
+├── requirements.txt           # Dependencias del proyecto
 └── README.md
 ```
+
+**Nota:** Los archivos generados (DB SQLite, XLSX, logs) se ignoran en Git por superar límites de almacenamiento.
 
 ## Prerrequisitos
 
 - Python 3.10+
 - MongoDB local corriendo en `localhost:27017`
-- Las colecciones `listings`, `reviews` y `calendar` ya importadas en la base de datos `airbnb_buenosaires`
+- Colecciones `Listings`, `Reviews` y `Calendar` ya importadas en la base de datos `airbnb_itm`
 
 ## Instalación
 
@@ -73,19 +76,10 @@ cp .env.example .env
 
 ## Carga de datos en MongoDB
 
-Antes de ejecutar el ETL, importar los datasets a MongoDB:
-
-```bash
-# Descomprimir los archivos
-gunzip listings.csv.gz
-gunzip reviews.csv.gz
-gunzip calendar.csv.gz
-
-# Importar a MongoDB
-mongoimport --db airbnb_buenosaires --collection listings  --type csv --headerline --file listings.csv
-mongoimport --db airbnb_buenosaires --collection reviews   --type csv --headerline --file reviews.csv
-mongoimport --db airbnb_buenosaires --collection calendar  --type csv --headerline --file calendar.csv
-```
+Los datos deben estar preimportados en MongoDB antes de ejecutar el ETL. Asegúrate de:
+- MongoDB está ejecutándose en `localhost:27017`
+- La base de datos `airbnb_itm` existe
+- Las colecciones `Listings`, `Reviews` y `Calendar` están pobladas
 
 ## Ejecución del proyecto
 
@@ -118,13 +112,20 @@ jupyter notebook notebooks/exploracion_airbnb.ipynb
 
 ## Salidas generadas
 
+Al ejecutar el ETL, se generan automáticamente:
+
 | Archivo | Ubicación | Descripción |
 |---|---|---|
 | `etl_airbnb.db` | `src/data/` | Base SQLite con las tres tablas transformadas |
 | `listings_transformado.xlsx` | `src/data/processed/` | Listings listos para análisis |
 | `reviews_transformado.xlsx` | `src/data/processed/` | Reviews listos para análisis |
 | `calendar_transformado.xlsx` | `src/data/processed/` | Calendar listos para análisis |
-| `log_*.txt` | `logs/` | Logs de cada ejecución del proceso |
+| `log_main_YYYYMMDD_HHMM.txt` | `logs/` | Log del proceso principal |
+| `log_extraccion_YYYYMMDD_HHMM.txt` | `logs/` | Log de la fase de extracción |
+| `log_transformacion_YYYYMMDD_HHMM.txt` | `logs/` | Log de la fase de transformación |
+| `log_carga_YYYYMMDD_HHMM.txt` | `logs/` | Log de la fase de carga |
+
+**Nota:** Estos carpetas se crean automáticamente en su ubicación correcta dentro de `etl_airbnb/` sin importar desde qué directorio se ejecute el script.
 
 ## Logs
 
@@ -132,12 +133,12 @@ Cada módulo genera un archivo de log con el formato `log_<modulo>_YYYYMMDD_HHMM
 
 Ejemplo de log generado:
 ```
-2026-04-04 10:32:01 - INFO    - Logger iniciado para el modulo: extraccion
-2026-04-04 10:32:01 - INFO    - Intentando conectar a MongoDB: mongodb://localhost:27017/
-2026-04-04 10:32:01 - INFO    - Conexion exitosa a la base de datos: 'airbnb_buenosaires'
-2026-04-04 10:32:02 - INFO    - Coleccion 'listings' extraida correctamente. Registros: 22.000 | Columnas: 74
-2026-04-04 10:32:05 - INFO    - Coleccion 'reviews' extraida correctamente. Registros: 450.000 | Columnas: 6
-2026-04-04 10:32:10 - INFO    - Coleccion 'calendar' extraida correctamente. Registros: 8.030.000 | Columnas: 7
+2026-04-08 14:32:01 - INFO    - Logger iniciado para el modulo: extraccion
+2026-04-08 14:32:01 - INFO    - Intentando conectar a MongoDB: mongodb://localhost:27017/
+2026-04-08 14:32:01 - INFO    - Conexion exitosa a la base de datos: 'airbnb_itm'
+2026-04-08 14:32:02 - INFO    - Coleccion 'Listings' extraida correctamente. Registros: 22.000 | Columnas: 74
+2026-04-08 14:32:05 - INFO    - Coleccion 'Reviews' extraida correctamente. Registros: 450.000 | Columnas: 6
+2026-04-08 14:32:10 - INFO    - Coleccion 'Calendar' extraida correctamente. Registros: 8.030.000 | Columnas: 7
 ```
 
 ## Integrantes del grupo
