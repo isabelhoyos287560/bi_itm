@@ -1,0 +1,26 @@
+2026-04-17 13:20:16 - INFO - Logger iniciado para el modulo: transformacion
+2026-04-17 13:20:16 - INFO - Archivo de log: c:\Users\Usuario\Documents\GitHub\bi_itm\etl_airbnb\entrega3\logs\log_transformacion_20260417_1320.txt
+2026-04-17 13:20:16 - INFO - Clase Transformacion inicializada con los tres DataFrames.
+2026-04-17 13:20:16 - INFO - Iniciando pipeline completo de transformaciones.
+2026-04-17 13:20:16 - INFO - Iniciando transformacion de Listings.
+2026-04-17 13:20:17 - INFO - [Listings] Registros antes: 27,051 | Despues: 27,051 | Duplicados eliminados: 0
+2026-04-17 13:20:17 - INFO - [Listings] 'price' convertido a float. Nulos resultantes: 3,484
+2026-04-17 13:20:17 - INFO - [Listings] Columna 'last_scraped' convertida a fecha. Variables derivadas: anio, mes, dia, trimestre.
+2026-04-17 13:20:17 - WARNING - [Listings] 6 valores no convertibles en 'host_since' quedaron como NaT.
+2026-04-17 13:20:17 - INFO - [Listings] Columna 'host_since' convertida a fecha. Variables derivadas: anio, mes, dia, trimestre.
+2026-04-17 13:20:17 - INFO - [Listings] Columna 'calendar_last_scraped' convertida a fecha. Variables derivadas: anio, mes, dia, trimestre.
+2026-04-17 13:20:17 - INFO - [Listings] Columna 'price_categoria' creada con rangos: Economico, Moderado, Alto, Premium.
+2026-04-17 13:20:17 - INFO - [Listings] Campo 'amenities_cantidad' derivado del campo 'amenities'.
+2026-04-17 13:20:18 - WARNING - [Listings] 3,401 nulos en 'review_scores_rating' reemplazados por 0.
+2026-04-17 13:20:18 - INFO - [Listings] Transformacion completada. Shape final: (27051, 90)
+2026-04-17 13:20:18 - INFO - [Listings] Convirtiendo columna compleja 'host_verifications' a string para carga.
+2026-04-17 13:20:18 - INFO - [Listings] Convirtiendo columna compleja 'amenities' a string para carga.
+2026-04-17 13:20:18 - INFO - Iniciando transformacion de Reviews.
+2026-04-17 13:20:24 - INFO - [Reviews] Registros antes: 1,454,740 | Despues: 1,454,740 | Duplicados eliminados: 0
+2026-04-17 13:20:24 - INFO - [Reviews] Columna 'date' convertida a fecha. Variables derivadas: anio, mes, dia, trimestre.
+2026-04-17 13:20:26 - INFO - [Reviews] Transformacion completada. Shape final: (1454740, 10)
+2026-04-17 13:20:26 - INFO - Iniciando transformacion de Calendar.
+2026-04-17 13:20:54 - INFO - [Calendar] Registros antes: 9,873,624 | Despues: 9,873,624 | Duplicados eliminados: 0
+2026-04-17 13:20:58 - INFO - [Calendar] Columna 'date' convertida a fecha. Variables derivadas: anio, mes, dia, trimestre.
+2026-04-17 13:20:58 - INFO - [Calendar] Transformacion completada. Shape final: (9873624, 9)
+2026-04-17 13:20:58 - INFO - Pipeline de transformaciones finalizado correctamente.

@@ -1,0 +1,19 @@
+2026-04-17 13:20:58 - INFO - Logger iniciado para el modulo: carga
+2026-04-17 13:20:58 - INFO - Archivo de log: c:\Users\Usuario\Documents\GitHub\bi_itm\etl_airbnb\entrega3\logs\log_carga_20260417_1320.txt
+2026-04-17 13:20:58 - INFO - Clase Carga inicializada.
+2026-04-17 13:20:58 - INFO - Iniciando pipeline completo de carga.
+2026-04-17 13:20:58 - INFO - Iniciando carga en SQLite: c:\Users\Usuario\Documents\GitHub\bi_itm\etl_airbnb\entrega3\src\data\etl_airbnb_mexico.db
+2026-04-17 13:20:59 - INFO - Tabla 'listings' cargada en SQLite. Registros: 27,051
+2026-04-17 13:21:06 - INFO - Tabla 'reviews' cargada en SQLite. Registros: 1,454,740
+2026-04-17 13:21:36 - INFO - Tabla 'calendar' cargada en SQLite. Registros: 9,873,624
+2026-04-17 13:21:36 - INFO - Carga en SQLite finalizada y conexion cerrada.
+2026-04-17 13:21:36 - INFO - Verificando integridad de la carga en SQLite.
+2026-04-17 13:21:36 - INFO - [OK] Tabla 'listings': 27,051 registros verificados correctamente.
+2026-04-17 13:21:36 - INFO - [OK] Tabla 'reviews': 1,454,740 registros verificados correctamente.
+2026-04-17 13:21:37 - INFO - [OK] Tabla 'calendar': 9,873,624 registros verificados correctamente.
+2026-04-17 13:21:37 - INFO - Iniciando exportacion a archivos XLSX.
+2026-04-17 13:22:33 - INFO - Archivo exportado: 'c:\Users\Usuario\Documents\GitHub\bi_itm\etl_airbnb\entrega3\src\data\processed\listings_transformado.xlsx' | Registros: 27,051
+2026-04-17 13:22:33 - ERROR - Error al exportar 'reviews_transformado.xlsx': This sheet is too large! Your sheet size is: 1454740, 10 Max sheet size is: 1048576, 16384
+2026-04-17 13:22:33 - ERROR - Error al exportar 'calendar_transformado.xlsx': This sheet is too large! Your sheet size is: 9873624, 9 Max sheet size is: 1048576, 16384
+2026-04-17 13:22:33 - INFO - Exportacion a XLSX finalizada.
+2026-04-17 13:22:33 - INFO - Pipeline de carga finalizado correctamente.

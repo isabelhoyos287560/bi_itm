@@ -1,0 +1,24 @@
+2026-04-17 13:14:39 - INFO - Logger iniciado para el modulo: transformacion
+2026-04-17 13:14:39 - INFO - Archivo de log: c:\Users\Usuario\Documents\GitHub\bi_itm\etl_airbnb\entrega3\logs\log_transformacion_20260417_1314.txt
+2026-04-17 13:14:40 - INFO - Clase Transformacion inicializada con los tres DataFrames.
+2026-04-17 13:14:40 - INFO - Iniciando pipeline completo de transformaciones.
+2026-04-17 13:14:40 - INFO - Iniciando transformacion de Listings.
+2026-04-17 13:14:41 - INFO - [Listings] Registros antes: 27,348 | Despues: 27,348 | Duplicados eliminados: 0
+2026-04-17 13:14:41 - INFO - [Listings] Columna 'last_scraped' convertida a fecha. Variables derivadas: anio, mes, dia, trimestre.
+2026-04-17 13:14:41 - WARNING - [Listings] La columna 'host_since' no existe. Se omite conversion.
+2026-04-17 13:14:41 - INFO - [Listings] Columna 'calendar_last_scraped' convertida a fecha. Variables derivadas: anio, mes, dia, trimestre.
+2026-04-17 13:14:41 - INFO - [Listings] Campo 'amenities_cantidad' derivado del campo 'amenities'.
+2026-04-17 13:14:42 - WARNING - [Listings] 106 nulos en 'minimum_nights' reemplazados por 0.
+2026-04-17 13:14:42 - WARNING - [Listings] 106 nulos en 'maximum_nights' reemplazados por 0.
+2026-04-17 13:14:42 - WARNING - [Listings] 3,303 nulos en 'review_scores_rating' reemplazados por 0.
+2026-04-17 13:14:42 - INFO - [Listings] Transformacion completada. Shape final: (27348, 80)
+2026-04-17 13:14:42 - INFO - [Listings] Convirtiendo columna compleja 'amenities' a string para carga.
+2026-04-17 13:14:43 - INFO - Iniciando transformacion de Reviews.
+2026-04-17 13:14:47 - INFO - [Reviews] Registros antes: 1,042,702 | Despues: 1,042,702 | Duplicados eliminados: 0
+2026-04-17 13:14:48 - INFO - [Reviews] Columna 'date' convertida a fecha. Variables derivadas: anio, mes, dia, trimestre.
+2026-04-17 13:14:48 - INFO - [Reviews] Transformacion completada. Shape final: (1042702, 10)
+2026-04-17 13:14:48 - INFO - Iniciando transformacion de Calendar.
+2026-04-17 13:15:16 - INFO - [Calendar] Registros antes: 9,982,072 | Despues: 9,982,072 | Duplicados eliminados: 0
+2026-04-17 13:15:20 - INFO - [Calendar] Columna 'date' convertida a fecha. Variables derivadas: anio, mes, dia, trimestre.
+2026-04-17 13:15:20 - INFO - [Calendar] Transformacion completada. Shape final: (9982072, 9)
+2026-04-17 13:15:20 - INFO - Pipeline de transformaciones finalizado correctamente.

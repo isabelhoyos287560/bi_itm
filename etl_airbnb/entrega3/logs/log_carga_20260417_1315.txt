@@ -1,0 +1,15 @@
+2026-04-17 13:15:20 - INFO - Logger iniciado para el modulo: carga
+2026-04-17 13:15:20 - INFO - Archivo de log: c:\Users\Usuario\Documents\GitHub\bi_itm\etl_airbnb\entrega3\logs\log_carga_20260417_1315.txt
+2026-04-17 13:15:20 - INFO - Clase Carga inicializada.
+2026-04-17 13:15:20 - INFO - Iniciando pipeline completo de carga.
+2026-04-17 13:15:20 - INFO - Iniciando carga en SQLite: c:\Users\Usuario\Documents\GitHub\bi_itm\etl_airbnb\entrega3\src\data\etl_airbnb.db
+2026-04-17 13:15:22 - INFO - Tabla 'listings' cargada en SQLite. Registros: 27,348
+2026-04-17 13:15:32 - INFO - Tabla 'reviews' cargada en SQLite. Registros: 1,042,702
+2026-04-17 13:16:08 - INFO - Tabla 'calendar' cargada en SQLite. Registros: 9,982,072
+2026-04-17 13:16:08 - INFO - Carga en SQLite finalizada y conexion cerrada.
+2026-04-17 13:16:08 - INFO - Verificando integridad de la carga en SQLite.
+2026-04-17 13:16:08 - INFO - [OK] Tabla 'listings': 27,348 registros verificados correctamente.
+2026-04-17 13:16:08 - INFO - [OK] Tabla 'reviews': 1,042,702 registros verificados correctamente.
+2026-04-17 13:16:08 - INFO - [OK] Tabla 'calendar': 9,982,072 registros verificados correctamente.
+2026-04-17 13:16:08 - INFO - Iniciando exportacion a archivos XLSX.
+2026-04-17 13:16:59 - INFO - Archivo exportado: 'c:\Users\Usuario\Documents\GitHub\bi_itm\etl_airbnb\entrega3\src\data\processed\listings_transformado.xlsx' | Registros: 27,348

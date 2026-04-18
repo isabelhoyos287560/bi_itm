@@ -1,0 +1,156 @@
+# ETL Airbnb — Ciudad Autónoma de Buenos Aires
+
+## Descripción general
+
+Proyecto académico del proceso ETL (Extract, Transform, Load) sobre los datasets de Airbnb de Buenos Aires, Argentina. El proyecto extrae datos desde MongoDB, aplica transformaciones de calidad y estandarización, y carga el resultado en SQLite con exportación a XLSX.
+
+## Objetivo
+
+Aplicar los conceptos de Extracción, Transformación y Carga (ETL) sobre los datasets de Airbnb almacenados en MongoDB, mediante un proceso automatizado en Python con manejo de logs, análisis exploratorio de datos y documentación del flujo de trabajo.
+
+## Estructura del repositorio
+
+```
+etl_airbnb/
+├── src/
+│   ├── logger.py              # Clase reutilizable de manejo de logs
+│   ├── config.py              # Configuración central y variables de entorno
+│   ├── extraccion.py          # Clase Extraccion — conexión a MongoDB y carga en DataFrames
+│   ├── transformacion.py      # Clase Transformacion — limpieza y estandarización
+│   ├── carga.py               # Clase Carga — SQLite y exportación XLSX
+│   ├── main.py                # Script principal que orquesta el ETL completo
+│   └── data/
+│       └── processed/         # 📁 GENERADO: salidas transformadas (XLSX), ignorado en Git
+├── notebooks/
+│   └── logs/   # logs de extraccíon unicamente del notebook   
+│   └── exploracion_airbnb.ipynb    # Análisis exploratorio de datos (EDA)
+├── logs/                      # Logs generados de extraccion, transformacion, carga y main
+├── Informe_Taller_2_ETL_Airbnb.docx  # Informe final con análisis y conclusiones, ignorado en Git
+├── .env.example               # Plantilla de variables de entorno
+├── requirements.txt           # Dependencias del proyecto
+└── README.md
+```
+
+**Nota:** Los archivos generados (DB SQLite, XLSX, logs) se ignoran en Git por superar límites de almacenamiento.
+
+## Prerrequisitos
+
+- Python 3.10+
+- MongoDB local corriendo en `localhost:27017`
+- Colecciones `Listings`, `Reviews` y `Calendar` ya importadas en la base de datos `airbnb_itm`
+
+## Instalación
+
+### 1. Clonar el repositorio
+
+```bash
+git clone <url-del-repositorio>
+cd etl_airbnb
+```
+
+### 2. Crear entorno virtual
+
+**Windows PowerShell:**
+```powershell
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+```
+
+**macOS / Linux:**
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### 3. Instalar dependencias
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Configurar variables de entorno
+
+```bash
+cp .env.example .env
+# Editar .env con los datos reales de conexión a MongoDB
+```
+
+## Carga de datos en MongoDB
+
+Los datos deben estar preimportados en MongoDB antes de ejecutar el ETL. Asegúrate de:
+- MongoDB está ejecutándose en `localhost:27017`
+- La base de datos `airbnb_itm` existe
+- Las colecciones `Listings`, `Reviews` y `Calendar` están pobladas
+
+## Ejecución del proyecto
+
+### Ejecutar el ETL completo
+
+```bash
+python src/main.py
+```
+
+Este comando ejecuta en secuencia: extracción → transformación → carga en SQLite → exportación XLSX.
+
+### Ejecutar módulos individuales
+
+```bash
+# Solo extracción (prueba de conexión)
+python src/extraccion.py
+
+# Solo transformación
+python src/transformacion.py
+
+# Solo carga
+python src/carga.py
+```
+
+### Abrir el notebook de EDA
+
+```bash
+jupyter notebook notebooks/exploracion_airbnb.ipynb
+```
+
+## Salidas generadas
+
+Al ejecutar el ETL, se generan automáticamente:
+
+| Archivo | Ubicación | Descripción |
+|---|---|---|
+| `etl_airbnb.db` | `src/data/` | Base SQLite con las tres tablas transformadas |
+| `listings_transformado.xlsx` | `src/data/processed/` | Listings listos para análisis |
+| `reviews_transformado.xlsx` | `src/data/processed/` | Reviews listos para análisis |
+| `calendar_transformado.xlsx` | `src/data/processed/` | Calendar listos para análisis |
+| `log_main_YYYYMMDD_HHMM.txt` | `logs/` | Log del proceso principal |
+| `log_extraccion_YYYYMMDD_HHMM.txt` | `logs/` | Log de la fase de extracción |
+| `log_transformacion_YYYYMMDD_HHMM.txt` | `logs/` | Log de la fase de transformación |
+| `log_carga_YYYYMMDD_HHMM.txt` | `logs/` | Log de la fase de carga |
+
+**Nota:** Estos carpetas se crean automáticamente en su ubicación correcta dentro de `etl_airbnb/` sin importar desde qué directorio se ejecute el script.
+
+## Logs
+
+Cada módulo genera un archivo de log con el formato `log_<modulo>_YYYYMMDD_HHMM.txt`. Los logs registran eventos con niveles INFO, WARNING y ERROR, e incluyen fecha, hora y descripción clara del evento.
+
+Ejemplo de log generado:
+```
+2026-04-08 14:32:01 - INFO    - Logger iniciado para el modulo: extraccion
+2026-04-08 14:32:01 - INFO    - Intentando conectar a MongoDB: mongodb://localhost:27017/
+2026-04-08 14:32:01 - INFO    - Conexion exitosa a la base de datos: 'airbnb_itm'
+2026-04-08 14:32:02 - INFO    - Coleccion 'Listings' extraida correctamente. Registros: 22.000 | Columnas: 74
+2026-04-08 14:32:05 - INFO    - Coleccion 'Reviews' extraida correctamente. Registros: 450.000 | Columnas: 6
+2026-04-08 14:32:10 - INFO    - Coleccion 'Calendar' extraida correctamente. Registros: 8.030.000 | Columnas: 7
+```
+
+## Integrantes del grupo
+
+| Nombre | Responsabilidad |
+|---|---|
+| Edwin Ramirez Gonzalez | Extracción y conexión MongoDB |
+| Isabel Johana Hoyos| Transformación y EDA |
+| Wilmar Fonseca| Carga SQLite, XLSX e informe |
+
+## Fuente de datos
+
+Inside Airbnb — Buenos Aires, Argentina  
+[http://insideairbnb.com/get-the-data](http://insideairbnb.com/get-the-data)
